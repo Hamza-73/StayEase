@@ -1,12 +1,23 @@
 const mongoose = require("mongoose");
 
-const usershema = new mongoose.Schema({
-    username : { type:String , require:true, unique:true },
-    email : { type:String , require:true, unique:true },
-    password: { type:String , require:true },
-    avatar: { type:String , default : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqafzhnwwYzuOTjTlaYMeQ7hxQLy_Wq8dnQg&s" }
-}, { timestamps : true});
+const UserSchema = mongoose.Schema(
+  {
+    UserName: {
+      type: String,
+      required: true,
+    },
+    email: {
+      type: String,
+      required: true,
+    },
+    password: {
+      type: String,
+      required: true,
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
 
-const User = mongoose.model('User', usershema);
-
-module.exports = User;
+module.exports = mongoose.model("User", UserSchema)
