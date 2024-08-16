@@ -6,7 +6,7 @@ const cookieParser = require('cookie-parser')
 require('dotenv').config();
 
 console.log("before db")
-mongoose.connect(process.env.MONGOURI).then(()=>{
+mongoose.connect('mongodb://127.0.0.1:27017/hotel_booking').then(()=>{
     console.log("Connetced to Mongo DB")
 }).catch((err)=>{
     console.log('error in connecting db',err.message)
