@@ -42,5 +42,7 @@ app.get('/',(req,res)=>{
 
 //Routes
 const userRoutes = require('./routes/user.route');
+const adminRoutes = require('./routes/admin.route')
 
 app.use('/user', userRoutes)
+app.use('/admin', adminRoutes)
